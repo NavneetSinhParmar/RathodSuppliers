@@ -1,0 +1,20 @@
+<!-- appname/templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <!-- Navigation bar and other common elements -->
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>

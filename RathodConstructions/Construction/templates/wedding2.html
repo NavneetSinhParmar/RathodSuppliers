@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% load static %}
+
+<style>
+    .image-container {
+        width: 250px;
+        height: 200px; /* Set your desired fixed height */
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 10px; /* Optional: Add some margin between images */
+    }
+</style>
+
+<div id="wrap-content" class="page-content">
+    <div id="post-172" class="page-holder custom-page-template page-full fullscreen-page clearfix">
+        <div data-elementor-type="wp-post" data-elementor-id="172" class="elementor elementor-172">
+            <br><br><br><br>
+
+            <section class="container elementor-section elementor-top-section elementor-element elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ac82b81" data-element_type="section">
+                <div class="row elementor-container elementor-column-gap-default">
+
+                    {% for i in image_range %}
+                    <div class="col-md-3 elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-a31bb67" data-id="a31bb67" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-e59c18d elementor-widget elementor-widget-image image-container" data-id="e59c18d" data-element_type="widget" data-widget_type="image.default" style="background-image: url('{% static 'Album/wedding/' %}{{ i }}.jpg');">
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
