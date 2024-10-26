@@ -1,0 +1,24 @@
+version: "2"
+networks:
+  my_network:
+    ipam:
+      config:
+        - subnet: 172.16.0.0/16
+          ip_range: 172.24.5.0/24
+services:
+rathod_suppliers:
+  image: navneetparmar/freelencing:latest
+  command: gunicorn --bind 0.0.0.0:8000 RathodSuppliers.asgi:application
+  # command: gunicorn --bind 0.0.0.0:8000 -k uvicorn.workers.UvicornWorker RathodSuppliers.asgi:application
+  restart: always
+  container_name: rathod_suppliers_staging
+  ports:
+    - 127.0.0.1:8000:8000
+  volumes:
+    - ./config/stage.env:/RathodSuppliers/RathodSuppliers/ons.env
+  #build: .
+  networks:
+    my_network: 
+      ipv4_address:
+        172.16.1.10 
+                                                                                   
