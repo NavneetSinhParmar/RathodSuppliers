@@ -1,7 +1,7 @@
 # Stage 1: Build stage
 FROM python:3.10.12 AS builder
 
-WORKDIR /suits
+WORKDIR /RathodConstructions
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
