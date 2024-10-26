@@ -46,6 +46,8 @@ EXPOSE $PORT
 
 ENV DJANGO_SETTINGS_MODULE=RathodConstructions.settings
 
+RUN /venv/bin/python manage.py collectstatic --noinput
+
 # Command to run the application using Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "RathodConstructions.wsgi:application"]
 
