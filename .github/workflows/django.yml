@@ -28,10 +28,10 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
       # Staging environment only
-      - name: Build the suits-backend docker image for Docker Hub Server
-        if: github.ref == 'refs/heads/master' || (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'master')
+      - name: Build the Rathod suppliers docker image for Docker Hub Server
+        if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main')
         run: docker build . --file Dockerfile --build-arg PORT=8000 --tag ${{ secrets.DOCKER_HUB_USERNAME }}/freelencing:latest
 
-      - name: Push the suits-backend Staging docker image to Docker Hub
-        if: github.ref == 'refs/heads/master' || (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'master')
+      - name: Push the Rathod suppliers Staging docker image to Docker Hub
+        if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main')
         run: docker push  ${{ secrets.DOCKER_HUB_USERNAME }}/freelencing:latest
