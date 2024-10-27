@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+print("BASE_DIR",BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -119,13 +119,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+print("STATIC_URL",STATIC_URL)
 STATIC_ROOT = BASE_DIR / 'static_collected'
-
+print("STATIC_ROOT",STATIC_ROOT)
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/Construction/static/',  # Absolute path to your static files directory
+    BASE_DIR / "Construction/static",
+    # '/Construction/static/',  # Absolute path to your static files directory
 ]
+print("STATICFILES_DIRS",STATICFILES_DIRS)
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
