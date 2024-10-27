@@ -124,10 +124,10 @@ STATIC_ROOT = BASE_DIR / 'static_collected'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    '/RathodConstructions/Construction/static/',  # Absolute path to your static files directory
+    '/Construction/static/',  # Absolute path to your static files directory
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
