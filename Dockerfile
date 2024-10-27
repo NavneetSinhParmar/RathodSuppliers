@@ -40,14 +40,20 @@ COPY . /RathodConstructions/
 # Set the PATH environment variable to include the virtual environment's binaries
 ENV PATH="/venv/bin:${PATH}"
 
+RUN /venv/bin/pip install --upgrade pip setuptools
+
+# Set up a non-root user
+RUN useradd -m appuser && chown -R appuser /RathodConstructions
+USER appuser
+
 # Expose the port used by the application
 ARG PORT
 EXPOSE $PORT
 
 ENV DJANGO_SETTINGS_MODULE=RathodConstructions.settings
 
-RUN /venv/bin/python manage.py collectstatic --noinput
-
+RUN /venv/bin/python manage.py collectstatic --noinput && \
+    chmod -R 755 /RathodConstructions/static_collected
 # Command to run the application using Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "RathodConstructions.wsgi:application"]
 
