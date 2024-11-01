@@ -21,3 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Construction.urls')),
 ]
+urlpatterns += staticfiles_urlpatterns()
