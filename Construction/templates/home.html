@@ -373,8 +373,8 @@
   
             <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
               <div class="project-img-container">
-                <a class="gallery-popup" href="images/projects/project1.jpg" aria-label="project-img">
-                  <img class="img-fluid" src="images/projects/project1.jpg" alt="project-img">
+                <a class="gallery-popup" href="{% static 'images/projects/project1.jpg' %}" aria-label="project-img">
+                  <img class="img-fluid" src="{% static 'images/projects/project1.jpg' %}" alt="project-img">
                   <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                 </a>
                 <div class="project-item-info">
@@ -390,8 +390,8 @@
   
             <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;healthcare&quot;]">
               <div class="project-img-container">
-                <a class="gallery-popup" href="images/projects/project2.jpg" aria-label="project-img">
-                  <img class="img-fluid" src="images/projects/project2.jpg" alt="project-img">
+                <a class="gallery-popup" href="{% static 'images/projects/project2.jpg' %}" aria-label="project-img">
+                  <img class="img-fluid" src="{% static 'images/projects/project2.jpg' %}" alt="project-img">
                   <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                 </a>
                 <div class="project-item-info">
@@ -407,8 +407,8 @@
   
             <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;infrastructure&quot;,&quot;commercial&quot;]">
               <div class="project-img-container">
-                <a class="gallery-popup" href="images/projects/project3.jpg" aria-label="project-img">
-                  <img class="img-fluid" src="images/projects/project3.jpg" alt="project-img">
+                <a class="gallery-popup" href="{% static 'images/projects/project3.jpg' %}" aria-label="project-img">
+                  <img class="img-fluid" src="{% static 'images/projects/project3.jpg' %}" alt="project-img">
                   <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                 </a>
                 <div class="project-item-info">
@@ -424,8 +424,8 @@
   
             <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;education&quot;,&quot;infrastructure&quot;]">
               <div class="project-img-container">
-                <a class="gallery-popup" href="images/projects/project4.jpg" aria-label="project-img">
-                  <img class="img-fluid" src="images/projects/project4.jpg" alt="project-img">
+                <a class="gallery-popup" href="{% static 'images/projects/project4.jpg' %}" aria-label="project-img">
+                  <img class="img-fluid" src="{% static 'images/projects/project4.jpg' %}" alt="project-img">
                   <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                 </a>
                 <div class="project-item-info">
@@ -441,8 +441,8 @@
   
             <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;infrastructure&quot;,&quot;education&quot;]">
               <div class="project-img-container">
-                <a class="gallery-popup" href="images/projects/project5.jpg" aria-label="project-img">
-                  <img class="img-fluid" src="images/projects/project5.jpg" alt="project-img">
+                <a class="gallery-popup" href="{% static 'images/projects/project5.jpg' %}" aria-label="project-img">
+                  <img class="img-fluid" src="{% static 'images/projects/project5.jpg' %}" alt="project-img">
                   <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                 </a>
                 <div class="project-item-info">
@@ -458,8 +458,8 @@
   
             <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;residential&quot;]">
               <div class="project-img-container">
-                <a class="gallery-popup" href="images/projects/project6.jpg" aria-label="project-img">
-                  <img class="img-fluid" src="images/projects/project6.jpg" alt="project-img">
+                <a class="gallery-popup" href="{% static 'images/projects/project6.jpg' %}" aria-label="project-img">
+                  <img class="img-fluid" src="{% static 'images/projects/project6.jpg' %}" alt="project-img">
                   <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                 </a>
                 <div class="project-item-info">
@@ -502,7 +502,7 @@
                       </span>
   
                       <div class="quote-item-footer">
-                        <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial1.png" alt="testimonial">
+                        <img loading="lazy" class="testimonial-thumb" src="{% static 'images/clients/testimonial1.png' %}" alt="testimonial">
                         <div class="quote-item-info">
                             <h3 class="quote-author">Gabriel Denis</h3>
                             <span class="quote-subtext">Chairman, OKT</span>
@@ -521,7 +521,7 @@
                       </span>
   
                       <div class="quote-item-footer">
-                        <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial2.png" alt="testimonial">
+                        <img loading="lazy" class="testimonial-thumb" src="{% static 'images/clients/testimonial2.png' %}" alt="testimonial">
                         <div class="quote-item-info">
                             <h3 class="quote-author">Weldon Cash</h3>
                             <span class="quote-subtext">CFO, First Choice</span>
@@ -540,7 +540,7 @@
                       </span>
   
                       <div class="quote-item-footer">
-                        <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial3.png" alt="testimonial">
+                        <img loading="lazy" class="testimonial-thumb" src="{% static 'images/clients/testimonial3.png' %}" alt="testimonial">
                         <div class="quote-item-info">
                             <h3 class="quote-author">Minter Puchan</h3>
                             <span class="quote-subtext">Director, AKT</span>
@@ -561,37 +561,37 @@
             <div class="row all-clients">
                 <div class="col-sm-4 col-6">
                   <figure class="clients-logo">
-                      <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client1.png" alt="clients-logo" /></a>
+                      <a href="#!"><img loading="lazy" class="img-fluid" src="{% static 'images/clients/client1.png' %}" alt="clients-logo" /></a>
                   </figure>
                 </div><!-- Client 1 end -->
   
                 <div class="col-sm-4 col-6">
                   <figure class="clients-logo">
-                      <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client2.png" alt="clients-logo" /></a>
+                      <a href="#!"><img loading="lazy" class="img-fluid" src="{% static 'images/clients/client2.png' %}" alt="clients-logo" /></a>
                   </figure>
                 </div><!-- Client 2 end -->
   
                 <div class="col-sm-4 col-6">
                   <figure class="clients-logo">
-                      <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client3.png" alt="clients-logo" /></a>
+                      <a href="#!"><img loading="lazy" class="img-fluid" src="{% static 'images/clients/client3.png' %}" alt="clients-logo" /></a>
                   </figure>
                 </div><!-- Client 3 end -->
   
                 <div class="col-sm-4 col-6">
                   <figure class="clients-logo">
-                      <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client4.png" alt="clients-logo" /></a>
+                      <a href="#!"><img loading="lazy" class="img-fluid" src="{% static 'images/clients/client4.png' %}" alt="clients-logo" /></a>
                   </figure>
                 </div><!-- Client 4 end -->
   
                 <div class="col-sm-4 col-6">
                   <figure class="clients-logo">
-                      <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client5.png" alt="clients-logo" /></a>
+                      <a href="#!"><img loading="lazy" class="img-fluid" src="{% static 'images/clients/client5.png' %}" alt="clients-logo" /></a>
                   </figure>
                 </div><!-- Client 5 end -->
   
                 <div class="col-sm-4 col-6">
                   <figure class="clients-logo">
-                      <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client6.png" alt="clients-logo" /></a>
+                      <a href="#!"><img loading="lazy" class="img-fluid" src="{% static 'images/clients/client6.png' %}" alt="clients-logo" /></a>
                   </figure>
                 </div><!-- Client 6 end -->
   
@@ -654,7 +654,7 @@
             <div class="latest-post">
                 <div class="latest-post-media">
                   <a href="news-single.html" class="latest-post-img">
-                      <img loading="lazy" class="img-fluid" src="images/news/news1.jpg" alt="img">
+                      <img loading="lazy" class="img-fluid" src="{% static 'images/news/news1.jpg' %}" alt="img">
                   </a>
                 </div>
                 <div class="post-body">
@@ -674,7 +674,7 @@
             <div class="latest-post">
                 <div class="latest-post-media">
                   <a href="news-single.html" class="latest-post-img">
-                      <img loading="lazy" class="img-fluid" src="images/news/news2.jpg" alt="img">
+                      <img loading="lazy" class="img-fluid" src="{% static 'images/news/news2.jpg' %}" alt="img">
                   </a>
                 </div>
                 <div class="post-body">
@@ -694,7 +694,7 @@
             <div class="latest-post">
                 <div class="latest-post-media">
                   <a href="news-single.html" class="latest-post-img">
-                      <img loading="lazy" class="img-fluid" src="images/news/news3.jpg" alt="img">
+                      <img loading="lazy" class="img-fluid" src="{% static 'images/news/news3.jpg' %}" alt="img">
                   </a>
                 </div>
                 <div class="post-body">
