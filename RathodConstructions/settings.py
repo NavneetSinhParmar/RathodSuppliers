@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+from django.conf import settings
+from django.conf.urls.static import static
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 print("BASE_DIR",BASE_DIR)
@@ -26,6 +27,7 @@ SECRET_KEY = 'django-insecure-wy#)a-yd35hpz&t@y%)@b(%nnhwdp4wh(t&p1%jdu)wm7d-9#v
 DEBUG = True
 
 ALLOWED_HOSTS = ["0.0.0.0", "165.232.177.118", "rathodsuppliers.in", "www.rathodsuppliers.in", "127.0.0.1", "localhost"]
+
 
 
 # Application definition
@@ -128,6 +130,12 @@ STATICFILES_DIRS = [
 ]
 print("STATICFILES_DIRS",STATICFILES_DIRS)
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+urlpatterns = [
+    # other patterns
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
