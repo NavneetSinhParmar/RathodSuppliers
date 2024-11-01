@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
 
 from pathlib import Path
 from django.conf import settings
@@ -123,19 +124,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 print("STATIC_URL",STATIC_URL)
 STATIC_ROOT = BASE_DIR / 'static_collected'
-print("STATIC_ROOT",STATIC_ROOT)
+# print("STATIC_ROOT",STATIC_ROOT)
 STATICFILES_DIRS = [
-    BASE_DIR / "Construction/static",
-    # '/Construction/static/',  # Absolute path to your static files directory
+    BASE_DIR / "static",
+    '/Construction/static/',  # Absolute path to your static files directory
 ]
 print("STATICFILES_DIRS",STATICFILES_DIRS)
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-urlpatterns = [
-    # other patterns
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns = [
+#     # other patterns
+# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
