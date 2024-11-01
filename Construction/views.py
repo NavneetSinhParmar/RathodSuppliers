@@ -1,12 +1,61 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponse
-
+from django.contrib import messages
+from .models import Register,VehicleInfo
 
 # Create your views here.
 def home_view(request):
     return render(request, 'home.html')
+
+def register_view(request):
+    return render(request, "register.html")
+
+def do_register(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        address = request.POST.get("address")
+        phone = request.POST.get("phone")
+        email = request.POST.get("email")  # Retrieve the email field
+
+        # Retrieve vehicle types and quantities
+        wheel_types = request.POST.getlist("wheel_type[]")
+        vehicle_numbers = request.POST.getlist("vehicle_no")
+
+        # Basic validation
+        if not name or not address or not phone:
+            messages.error(request, "Please fill in all required fields.")
+            return render(request, "home.html")
+
+        # Save Register data
+        try:
+            registration = Register(
+                name=name,
+                address=address,
+                phone=phone,
+                email=email  # Include the email field
+            )
+            registration.save()
+
+            # Save associated VehicleInfo entries
+            for wheel_type, vehicle_no in zip(wheel_types, vehicle_numbers):
+                if wheel_type and vehicle_no:
+                    vehicle_info = VehicleInfo(
+                        register=registration,
+                        wheel_type=wheel_type,
+                        vehicle_no=int(vehicle_no)
+                    )
+                    vehicle_info.save()
+
+            messages.success(request, "Registration successful!")
+            return redirect("home")
+
+        except Exception as e:
+            messages.error(request, f"An error occurred: {e}")
+            return render(request, "home.html")
+
+    return render(request, "home.html")
 
 def about_view(request):
     return render(request, "about.html")
