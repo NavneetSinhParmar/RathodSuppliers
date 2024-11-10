@@ -127,7 +127,7 @@ STATIC_ROOT = BASE_DIR / 'static_collected'
 # print("STATIC_ROOT",STATIC_ROOT)
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    '/Construction/static/',  # Absolute path to your static files directory
+    'static',  # Absolute path to your static files directory
 ]
 print("STATICFILES_DIRS",STATICFILES_DIRS)
 
